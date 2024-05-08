@@ -1,0 +1,37 @@
+<div class="grid grid-cols-1 gap-4">  
+      
+<section class="hero bg-hero bg-center lg:bg-cover bg-no-repeat bg-fixed rounded-bl-[350px] z-20">
+    <div class="container mx-auto text-center text-[#E8EEF3] p-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to BeeCom</h1>
+        <p class="text-lg md:text-xl ">" Bee the change you want to see "</p>
+        <a href="#" class="inline-block mt-8 px-6 py-3 bg-white text-[#1D6042] hover:bg-[#E8EEF3] font-semibold rounded hover:[#9bbaa4] transition duration-300">
+            Discover our products
+        </a>
+    </div>
+</section>
+
+<section class=" text-center p-8 bg-[url(/assets/leaf1.png)] bg-no-repeat bg-left">
+
+        <h2 class="m-3 text-xl text-[#1D6042] overline"> POPULAR PRODUCTS </h2> 
+
+        <div class="flex md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+            
+            <ul *ngFor="let prod of Product" class="flex-shrink-0 flex justify-center space-x-12">
+               <li class="hover:scale-110">
+                  <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
+                  <h5 class="text-[#1D6042] font-bold">{{prod}}</h5>
+                  <p class="text-[#9bbaa4]">Description</p>
+                  <p>Price</p>
+                  <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                      Shop Now
+                  </button>  
+                </li>
+            </ul>
+
+        </div>
+          
+</section>
+
+
+</div>
+

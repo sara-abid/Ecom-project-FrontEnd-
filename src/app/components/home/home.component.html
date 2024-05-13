@@ -1,6 +1,6 @@
-<div class="grid grid-cols-1 gap-4">  
+<div class=" home w-full grid grid-cols-1 gap-4 overflow-x-hidden">  
       
-<section class="hero bg-hero bg-center lg:bg-cover bg-no-repeat bg-fixed rounded-bl-[350px] z-20">
+<section class="hero bg-hero bg-cover bg-center lg:bg-cover bg-no-repeat bg-fixed lg:rounded-bl-[350px] z-20">
     <div class="container mx-auto text-center text-[#E8EEF3] p-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to BeeCom</h1>
         <p class="text-lg md:text-xl ">" Bee the change you want to see "</p>
@@ -12,11 +12,11 @@
 
 <section class=" text-center p-8 bg-[url(/assets/leaf1.png)] bg-no-repeat bg-left">
 
-        <h2 class="m-3 text-xl text-[#1D6042] overline"> POPULAR PRODUCTS </h2> 
+        <h2 class="m-3 text-xl text-[#1D6042] overline py-4"> POPULAR PRODUCTS </h2> 
 
-        <div class="flex md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+        <!-- <div class="w-full flex">
             
-            <ul *ngFor="let prod of Product" class="flex-shrink-0 flex justify-center space-x-12">
+            <ul *ngFor="let prod of Product" class="flex-shrink-0 flex justify-center space-x-12 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                <li class="hover:scale-110">
                   <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
                   <h5 class="text-[#1D6042] font-bold">{{prod}}</h5>
@@ -27,11 +27,96 @@
                   </button>  
                 </li>
             </ul>
-
-        </div>
+        
+        </div> -->
           
+        <div class="w-full flex ">
+            <ul class="flex-shrink-0 flex justify-center space-x-12 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll " #productContainer>
+                <ng-container *ngFor="let prod of clonedProducts; let i = index">
+                    <li class="hover:scale-110">
+                        <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
+                        <h5 class="text-[#1D6042] font-bold">{{prod}}</h5>
+                        <p class="text-[#9bbaa4]">Description</p>
+                        <p>Price</p>
+                        <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                            Shop Now
+                        </button>
+                    </li>
+                    <!-- Si c'est le dernier produit, afficher les premiers produits -->
+                    <ng-container *ngIf="i === clonedProducts.length - 1">
+                        <ng-container *ngFor="let prod of clonedProducts.slice(0, Product.length); let j = index">
+                            <li class="hover:scale-110">
+                                <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
+                                <h5 class="text-[#1D6042] font-bold">{{prod}}</h5>
+                                <p class="text-[#9bbaa4]">Description</p>
+                                <p>Price</p>
+                                <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                                    Shop Now
+                                </button>
+                            </li>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </ul>
+        </div>
+        
+
 </section>
 
+<section class=" w-full mx-auto p-8 scroll-smooth focus:scroll-auto">
+
+    <div class="text-center">
+        <h2 class="py-4 m-3 text-xl text-[#1D6042] overline"> WHY CHOOSE US </h2> 
+    </div>
+    
+
+
+    
+    <div class="lg:grid lg:grid-row-3 ">
+        <div class=" lg:flex lg:justify-start lg:content-between lg:mx-6" > 
+            <div class="sm:flex sm:justify-center h-48">
+            <img class=" lg:max-w-sm sm:max-w-md rounded-[25px] object-cover" src="/assets/nature.jpg" alt="billboard image" />
+            </div>
+            <div class="lg:w-[50%] sm:w-full xs:w-full text-[#9bbaa4] bg-[#fdf2e73f] lg:p-4 rounded-[25px] lg:mx-8">
+                <h4 class="text-2xl font-semibold m-0 backdrop-blur-sm">Quality and Durability</h4>
+                <p class="text-justify text-md p-0">
+                    Our products are crafted with the highest quality materials, ensuring durability and longevity. By investing in our eco-friendly products, you can enjoy peace of mind knowing that they will last for years to come, reducing the need for frequent replacements.                </p>
+            </div>
+        </div>
+
+
+        <div class="lg:grid lg:grid-row-3 py-7">
+            <div class=" lg:flex lg:justify-end lg:content-between lg:mx-6" > 
+                
+                <div class="lg:w-[50%] sm:w-full xs:w-full text-[#9bbaa4]  bg-[#fdf2e7] lg:p-4 rounded-[25px] lg:mx-8">
+                    <h4 class="text-2xl font-semibold m-0 backdrop-blur-sm">Quality and Durability</h4>
+                    <p class="text-justify text-md p-0">
+                        Our products are crafted with the highest quality materials, ensuring durability and longevity. By investing in our eco-friendly products, you can enjoy peace of mind knowing that they will last for years to come, reducing the need for frequent replacements.                </p>
+                </div>
+                <div class="sm:flex sm:justify-center h-48">
+                    <img class=" lg:max-w-sm sm:max-w-md rounded-[25px] object-cover" src="/assets/nature.jpg" alt="billboard image" />
+                    </div>
+            </div>
+        </div>    
+
+
+        <div class="lg:grid lg:grid-row-3 ">
+            <div class=" lg:flex lg:justify-start lg:content-between lg:mx-6" > 
+                <div class="sm:flex sm:justify-center h-48">
+                <img class=" lg:max-w-sm sm:max-w-md rounded-[25px] object-cover" src="/assets/nature.jpg" alt="billboard image" />
+                </div>
+                <div class="lg:w-[50%] sm:w-full xs:w-full text-[#9bbaa4]  bg-[#fdf2e7] lg:p-4 rounded-[25px] lg:mx-8">
+                    <h4 class="text-2xl font-semibold m-0 backdrop-blur-sm">Quality and Durability</h4>
+                    <p class="text-justify text-md p-0">
+                        Our products are crafted with the highest quality materials, ensuring durability and longevity. By investing in our eco-friendly products, you can enjoy peace of mind knowing that they will last for years to come, reducing the need for frequent replacements.                </p>
+                </div>
+            </div>
+        </div> 
+
+          
+    </div>
+
+</section>
 
 </div>
 

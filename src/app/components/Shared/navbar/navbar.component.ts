@@ -14,6 +14,8 @@ export class NavbarComponent {
     {title: "About us", route: "/aboutus"},
   ]
 
+  isOpen : boolean = false;
+
   goToSignup() {
 
   }

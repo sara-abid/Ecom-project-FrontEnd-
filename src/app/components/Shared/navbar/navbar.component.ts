@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   actions : Array<any>=[
     {title:"Home", route:"/home"},
-    {title: "Shop", route: "/Shop"},
+    {title: "Shop", route: "/shop"},
     {title: "Contact us", route: "/contactus"},
     {title: "Blog", route: "/blog"},
     {title: "About us", route: "/aboutus"},

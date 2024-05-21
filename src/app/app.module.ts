@@ -9,6 +9,9 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 // import { ProductListComponent } from './product/product-list/product-list.component';
+// import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { DashboardsComponent } from './admin/dashboards/dashboards.component';
 
 @NgModule({
@@ -19,6 +22,8 @@ import { DashboardsComponent } from './admin/dashboards/dashboards.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    ProductListComponent,
+    ProductDetailComponent,
     DashboardsComponent
   ],
   imports: [

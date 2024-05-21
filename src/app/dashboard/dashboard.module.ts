@@ -66,7 +66,7 @@ const routes: Routes = [
     RouterLink, BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    RouterModule.forChild(routes), MatTableModule, MatPaginatorModule
+    RouterModule.forRoot(routes), MatTableModule, MatPaginatorModule
   ],
   exports: [RouterModule]
 })

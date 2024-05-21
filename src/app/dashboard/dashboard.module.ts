@@ -23,6 +23,7 @@ import { TagsComponent } from './tags/tags.component';
 import { WebsiteComponent } from './website/website.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
+import {HttpClientModule} from "@angular/common/http";
 
 
 const routes: Routes = [
@@ -65,8 +66,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterLink, BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(routes), MatTableModule, MatPaginatorModule
+    RouterModule.forChild(routes), MatTableModule, MatPaginatorModule
   ],
   exports: [RouterModule]
 })

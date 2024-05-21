@@ -34,10 +34,10 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     // AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule,
     CommonModule,
-    RouterModule,
-    FormsModule
+    RouterModule.forRoot([]),
+    FormsModule,
+    DashboardModule
   ],
   // exports : [RouterModule],
   providers: [],

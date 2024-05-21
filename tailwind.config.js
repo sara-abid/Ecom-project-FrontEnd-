@@ -17,7 +17,6 @@ module.exports = {
     backgroundImage: {
       logo: 'url(/assets/LOGO.png)',
       hero: 'url(/assets/nature.jpg)',
-      decoration: 'url(/assets/leaf1.png)',
     },
     extend: {
       animation: {

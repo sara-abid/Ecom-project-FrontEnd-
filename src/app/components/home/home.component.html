@@ -1,6 +1,6 @@
 <div class=" home w-full grid grid-cols-1 gap-4 overflow-x-hidden">  
       
-<section class="hero bg-hero bg-cover bg-center lg:bg-cover bg-no-repeat bg-fixed lg:rounded-bl-[350px] z-20">
+<section class="hero bg-[url('/assets/nature1.jpg')] bg-cover bg-center lg:bg-cover bg-no-repeat bg-fixed lg:rounded-bl-[350px] z-20">
     <div class="container mx-auto text-center text-[#E8EEF3] p-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to BeeCom</h1>
         <p class="text-lg md:text-xl ">" Bee the change you want to see "</p>
@@ -43,7 +43,7 @@
                         </button>
                     </li>
                     <!-- Si c'est le dernier produit, afficher les premiers produits -->
-                    <ng-container *ngIf="i === clonedProducts.length - 1">
+                    <!-- <ng-container *ngIf="i === clonedProducts.length - 1">
                         <ng-container *ngFor="let prod of clonedProducts.slice(0, Product.length); let j = index">
                             <li class="hover:scale-110">
                                 <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
@@ -55,7 +55,7 @@
                                 </button>
                             </li>
                         </ng-container>
-                    </ng-container>
+                    </ng-container> -->
                 </ng-container>
             </ul>
         </div>
@@ -76,7 +76,7 @@
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
-                    <img src="/assets/home.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                     <div
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -89,7 +89,7 @@
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
-                    <img src="/assets/Beauty.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                     <div
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -102,7 +102,7 @@
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
-                    <img src="/assets/garden.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                     <div
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -115,7 +115,7 @@
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
-                    <img src="/assets/gift.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                     <div
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -190,7 +190,7 @@
       
       <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
         <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image" src="/assets/nature.jpg" />
+          <img class="max-h-40 w-full object-cover" alt="featured image"  />
           <div class="w-full bg-white p-4">
             <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
             <p class="mb-2 text-xl font-medium text-black">A Visit to Mount Abignale</p>
@@ -205,7 +205,7 @@
       
       <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
         <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image" src="/assets/nature.jpg" />
+          <img class="max-h-40 w-full object-cover" alt="featured image"  />
           <div class="w-full bg-white p-4">
             <p class="text-md font-medium text-[#1d6042cd]">Gardening</p>
             <p class="mb-2 text-xl font-medium text-black">Sunflowers are my favorite</p>
@@ -220,7 +220,7 @@
       
       <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
         <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image" src="/assets/nature.jpg" />
+          <img class="max-h-40 w-full object-cover" alt="featured image"  />
           <div class="w-full bg-white p-4">
             <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
             <p class="mb-2 text-xl font-medium text-black">Getting to know the Ice Factory Pattern</p>

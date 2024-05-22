@@ -16,7 +16,6 @@ module.exports = {
     },
     backgroundImage: {
       logo: 'url(/assets/LOGO.png)',
-      hero: 'url(/assets/nature.jpg)',
     },
     extend: {
       animation: {

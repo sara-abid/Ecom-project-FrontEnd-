@@ -9,6 +9,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,20 @@ import { ShopComponent } from './components/shop/shop.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ShopComponent
+    ShopComponent,
+    ShoppingCartComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    //HttpClientModule,
+    //MatProgressSpinnerModule,
+    //BrowserAnimationsModule,
+    //SharedModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

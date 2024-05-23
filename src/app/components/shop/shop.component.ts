@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-<<<<<<< HEAD
-export class ShopComponent {
-  
-}
-=======
+
+
 export class ShopComponent implements OnInit{
 
   categorieOpen: boolean = false;
@@ -22,4 +19,3 @@ export class ShopComponent implements OnInit{
         this.categorieOpen = !this.categorieOpen;
     }
 }
->>>>>>> 05695aec6863c199e8df991af80b04b5a3f859e3

@@ -20,7 +20,7 @@
       </li>
       <li class="relative">
         <button class="fas fa-shopping-cart hover:text-[#E8EEF3]" routerLink="/shoppingcart"></button>
-        <span  class="absolute -top-2 -right-2 rounded-full bg-red-500 w-4 h-4 text-xs text-white flex items-center justify-center">{{ cartItemCount }}</span>
+        <span *ngIf="cartItemCount > 0" class="absolute -top-2 -right-2 rounded-full bg-red-500 w-4 h-4 text-xs text-white flex items-center justify-center">{{ cartItemCount }}</span>
         
         </li>
     </ul>

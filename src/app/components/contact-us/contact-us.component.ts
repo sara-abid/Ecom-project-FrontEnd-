@@ -46,7 +46,7 @@ export class ContactUsComponent implements OnInit {
     .then((response: EmailJSResponseStatus) => {
       console.log('SUCCESS!', response.status, response.text);
       alert('Message sent successfully!');
-    }, (error) => {
+    }, (error: any) => {
       console.error('FAILED...', error);
       alert('Failed to send message. Please try again.');
     });

@@ -13,8 +13,17 @@ import { BlogComponent } from './components/blog/blog.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { MatCardModule } from '@angular/material/card';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -26,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    HomeComponent,
+    // HomeComponent,
     ContactUsComponent,
     BlogComponent,
     AboutUsComponent,
@@ -38,6 +47,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+   
+   
+    MatButtonModule,
+    // --------------------
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ToastrModule.forRoot(),
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

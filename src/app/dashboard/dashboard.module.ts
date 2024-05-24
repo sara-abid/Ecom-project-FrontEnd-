@@ -174,6 +174,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { DataSource } from '@angular/cdk/collections';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModel } from '../components/Shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -195,15 +196,19 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
+    // FormsModule,
+    // ReactiveFormsModule,
+    // RouterModule,
     DashboardRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatFormFieldModule,
+    // MatTableModule,
+    // MatPaginatorModule,
+    // MatCardModule,
+    // MatFormFieldModule,
+    SharedModel,
     ToastrModule.forRoot()
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class DashboardModule { }

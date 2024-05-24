@@ -70,7 +70,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let item of product.slice(-5).reverse()">
+                    <li *ngFor="let item of product">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <img class="h-[40px] w-[40px] rounded-full object-cover" [src]="item.image" alt="">
@@ -95,7 +95,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let order of orders.orders.slice(-5).reverse()">
+                    <li *ngFor="let order of orders">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <img class="h-[40px] w-[40px] rounded-full object-cover" [src]="order.customer.profileImage" alt="">
@@ -125,7 +125,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let customer of Costumers.slice(-5).reverse()">
+                    <li *ngFor="let customer of Costumers">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <img class="h-[40px] w-[40px] rounded-full object-cover" [src]="customer.profileImage" alt="">
@@ -151,7 +151,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let cat of cats.slice(-6).reverse()">
+                    <li *ngFor="let cat of cats">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <img class="h-[40px] w-[40px] rounded-full object-cover" [src]="cat.image" alt="">
@@ -175,7 +175,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let tag of tags.slice(-6).reverse()">
+                    <li *ngFor="let tag of tags">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <div class="flex flex-col gap-1 items-start ">
@@ -198,7 +198,7 @@
             </div>
             <div class="pt-5">
                 <ul>
-                    <li *ngFor="let comment of comments.slice(-5).reverse()">
+                    <li *ngFor="let comment of comments">
                         <div class="flex items-center py-3 gap-3 justify-between border-t">
                             <div class="flex items-center gap-3">
                                 <div class="flex flex-col gap-1 items-start ">

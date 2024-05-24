@@ -49,17 +49,17 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
    
    
-    MatButtonModule,
+    // MatButtonModule,
     // --------------------
-    RouterModule,
-    FormsModule,
+    // RouterModule,
+     FormsModule,
     HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatFormFieldModule,
-    ToastrModule.forRoot(),
-    DashboardModule
+    // MatTableModule,
+    // MatPaginatorModule,
+    // MatCardModule,
+    // MatFormFieldModule,
+    // ToastrModule.forRoot(),
+    // DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

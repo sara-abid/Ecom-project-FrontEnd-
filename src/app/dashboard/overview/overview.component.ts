@@ -16,7 +16,7 @@ import {CustomersService} from "../services/customer.service";
 export class OverviewComponent implements OnInit{
   public product: any[] = [];
 
-  public orders: any;
+  public orders: any = [];
 
   public Costumers:any[] = [];
 

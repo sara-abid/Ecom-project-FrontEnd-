@@ -38,13 +38,13 @@ const routes: Routes = [
     path: "cart",
     component: CartComponent
   },
-  { path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
+  // { path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule] 
 })
 export class AppRoutingModule { }

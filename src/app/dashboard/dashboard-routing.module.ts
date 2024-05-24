@@ -81,9 +81,6 @@ import { ErrorComponent } from './error/error.component';
 import { ProductsComponent } from './products-routes/products/products.component';
 import { NewProductComponent } from './products-routes/new-product/new-product.component';
 import { ProductDetailComponent } from './products-routes/product-detail/product-detail.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { HeaderComponent } from './header/header.component';
-
 const routes: Routes = [
   {
     path: '',

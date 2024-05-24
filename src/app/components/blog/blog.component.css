@@ -1,0 +1,15 @@
+    
+/* Styles pour l'effet de déplacement */
+body {
+    background-color: white;
+    color: black; /* Assurez-vous que le texte soit lisible sur fond blanc */
+}
+.rounded-custom {
+    border-radius: 10px; /* Ajustez la valeur selon vos besoins */
+}
+.move-on-hover {
+    transition: transform 0.3s ease-in-out;
+}
+.move-on-hover:hover {
+    transform: translateY(-10px);
+}

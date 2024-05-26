@@ -7,14 +7,17 @@ import { BlogComponent } from './components/blog/blog.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SideBarComponent } from './dashboard/side-bar/side-bar.component';
+import { WebComponent } from './components/web/web.component';
 // import { HeaderComponent } from './dashboard/header/header.component';
 
 const routes: Routes = [
   // { path:'',
   // component: HomeComponent
   // },
-  {path:'',redirectTo:'home',pathMatch:'full'},
   {
+    path: '' , component : WebComponent,
+    children  : [
+      {
     path: "home",
     component: HomeComponent
   },
@@ -38,7 +41,13 @@ const routes: Routes = [
     path: "cart",
     component: CartComponent
   },
-  // { path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
+    
+    ]
+
+  },
+
+  
+  { path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
 
 ];

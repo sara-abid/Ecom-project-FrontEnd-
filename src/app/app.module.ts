@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MatCardModule } from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
+import { WebComponent } from './components/web/web.component';
 
 
 
@@ -41,6 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
     AboutUsComponent,
     CartComponent,
     ShopComponent,
+    WebComponent,
   ],
   imports: [
     BrowserModule,

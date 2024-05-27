@@ -11,45 +11,19 @@ import { WebComponent } from './components/web/web.component';
 // import { HeaderComponent } from './dashboard/header/header.component';
 
 const routes: Routes = [
-  // { path:'',
-  // component: HomeComponent
-  // },
   {
     path: '' , component : WebComponent,
     children  : [
-      {
-    path: "home",
-    component: HomeComponent
-  },
-  {
-    path: "shop",
-    component: ShopComponent
-  },
-  {
-    path: "contactus",
-    component: ContactUsComponent
-  },
-  {
-    path: "blog",
-    component: BlogComponent
-  },
-  {
-    path: "aboutus",
-    component: AboutUsComponent
-  },
-  {
-    path: "cart",
-    component: CartComponent
-  },
-    
-    ]
-
-  },
-
-  
-  { path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
-
+    { path: '' , component : HomeComponent},
+    {path: "home", component: HomeComponent},
+    {path: "shop", component: ShopComponent },
+    {path: "contactus", component: ContactUsComponent},
+    {path: "blog", component: BlogComponent},
+    {path: "aboutus",component: AboutUsComponent},
+    {path: "cart",component: CartComponent}]},
+    {path: '', redirectTo: '/dashboard/overview', pathMatch: 'full' }, // default route
+    {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').
+    then(m => m.DashboardModule) }
 ];
 
 @NgModule({

@@ -1,45 +1,30 @@
-<nav class=" navbar flex justify-between items-center  bg-[#1D6042] ">
-
-  <div class="pt-2 z-50">       
-<img src="/assets/LOGO.png" alt="logo" class="w-16 inline  md:ml-16 ml-4" >
-</div>
-
-<div class=" md:static absolute bg-white md:bg-[#1D6042] md:min-h-fit z-40 top-[72px] md:w-auto w-full flex items-center justify-center px-5">
-<ul class="md:grid md:grid-cols-5 flex-col md:items-center  p-20 md:p-0 "
-[ngClass]="isOpen ? 'flex':'hidden'" >
-<li *ngFor="let action of actions" class="text-center " >
- <button class="text-[#9bbaa4] hover:text-[#E8EEF3] px-4 py-2 rounded-md text-l "
-   [routerLink]="action.route">
-   <span>{{action.title}}</span>
-   <i class="bi bi-{{action.icon}}"></i>
- </button>
-</li>
-</ul>
-</div>
-
-
-<div class="flex items-center text-[#9bbaa4] md:mr-16 mr-4">
-<ul class="flex space-x-8">
-<li>
- <button class="fas fa-user hover:text-[#E8EEF3] "></button>
-</li>
-<li>
- <button class="fas fa-search hover:text-[#E8EEF3]"></button>
-</li>
-<li>
- <button class="fas fa-shopping-cart hover:text-[#E8EEF3]" routerLink="cart"></button>
-</li>
-<li>
- <div class="block md:hidden">
-   <!-- <input type="checkbox" id="check"> -->
-   <label for="check" class="text-[#9bbaa4]">
-     <i class="fas fa-bars cursor-pointer" (click)="isOpen = !isOpen " ></i>
-   </label>
- </div>
-</li>
-</ul>
-
-</div>
+<nav class="flex justify-between bg-[#1D6042]">
+  <div class="space-x-8 ml-20">
+    <ul class="flex space-x-6">
+      <img src="/assets/LOGO.png" alt="logo" class="w-14 mr-52 pt-1">
+      <li *ngFor="let action of actions" class="mr-1 py-3">
+        <button class="text-[#9bbaa4] hover:text-[#E8EEF3] px-4 py-2 rounded-md text-l" [routerLink]="action.route">
+          <span>{{action.title}}</span>
+          <i class="bi bi-{{action.icon}}"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="flex items-center text-[#9bbaa4] space-x-8 mr-20">
+    <ul class="flex space-x-8 relative">
+      <li>
+        <button class="fas fa-user hover:text-[#E8EEF3]"></button>
+      </li>
+      <li>
+        <button class="fas fa-search hover:text-[#E8EEF3]"></button>
+      </li>
+      <li class="relative">
+        <button class="fas fa-shopping-cart hover:text-[#E8EEF3]" routerLink="/shoppingcart"></button>
+        <span *ngIf="cartItemCount > 0" class="absolute -top-2 -right-2 rounded-full bg-red-500 w-4 h-4 text-xs text-white flex items-center justify-center">{{ cartItemCount }}</span>
+        
+        </li>
+    </ul>
+  </div>
 </nav>
 
-
+<router-outlet></router-outlet>

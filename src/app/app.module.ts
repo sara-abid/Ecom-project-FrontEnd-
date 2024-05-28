@@ -15,7 +15,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutUsComponent,
     CartComponent,
     ShopComponent,
+    ShoppingCartComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    //HttpClientModule,
+    //MatProgressSpinnerModule,
+    //BrowserAnimationsModule,
+    //SharedModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

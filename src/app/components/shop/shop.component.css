@@ -1,0 +1,13 @@
+.mat-mdc-slider.mat-success {
+
+    --mdc-slider-handle-color: #1D6042; 
+    --mdc-slider-focus-handle-color: #1D6042; 
+    --mdc-slider-active-track-color: #1D6042 ;
+    --mdc-slider-inactive-track-color: #1d604283 ;
+    /* --mdc-slider-with-tick-marks-active-container-color: #c2b200 ;
+    --mdc-slider-with-tick-marks-inactive-container-color: #c20010 ; */
+    /* --mat-mdc-slider-focus-ripple-color: #601d5883 ;
+    --mat-mdc-slider-focus-ripple-color: #605f1d83 ; */
+
+
+}

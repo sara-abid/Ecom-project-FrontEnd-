@@ -11,9 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
-import { FormsModule } from '@angular/forms';
-
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,13 +22,21 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ShopComponent
+    ShopComponent,
+    ShoppingCartComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    //HttpClientModule,
+    //MatProgressSpinnerModule,
+    //BrowserAnimationsModule,
+    //SharedModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

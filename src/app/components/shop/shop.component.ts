@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 interface Product {
   name: string;
   price: number;
@@ -10,6 +11,7 @@ interface Product {
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
+
 export class ShopComponent implements OnInit {
   homeOpen = false;
   beautyOpen = false;

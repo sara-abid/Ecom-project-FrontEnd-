@@ -1,10 +1,9 @@
-  <nav class=" flex justify-between bg-[#1D6042]  ">
+<nav class="flex justify-between bg-[#1D6042]">
   <div class="space-x-8 ml-20">
     <ul class="flex space-x-6">
-      <img src="/assets/LOGO.png" alt="logo" class="w-14 mr-52 pt-1" >
+      <img src="/assets/LOGO.png" alt="logo" class="w-14 mr-52 pt-1">
       <li *ngFor="let action of actions" class="mr-1 py-3">
-        <button class="text-[#9bbaa4] hover:text-[#E8EEF3] px-4 py-2 rounded-md text-l"
-          [routerLink]="action.route">
+        <button class="text-[#9bbaa4] hover:text-[#E8EEF3] px-4 py-2 rounded-md text-l" [routerLink]="action.route">
           <span>{{action.title}}</span>
           <i class="bi bi-{{action.icon}}"></i>
         </button>
@@ -12,21 +11,20 @@
     </ul>
   </div>
   <div class="flex items-center text-[#9bbaa4] space-x-8 mr-20">
-    <ul class="flex space-x-8">
+    <ul class="flex space-x-8 relative">
       <li>
         <button class="fas fa-user hover:text-[#E8EEF3]"></button>
       </li>
       <li>
         <button class="fas fa-search hover:text-[#E8EEF3]"></button>
       </li>
-      <li>
-        <button class="fas fa-shopping-cart hover:text-[#E8EEF3]"></button>
-      </li>
+      <li class="relative">
+        <button class="fas fa-shopping-cart hover:text-[#E8EEF3]" routerLink="/shoppingcart"></button>
+        <span *ngIf="cartItemCount > 0" class="absolute -top-2 -right-2 rounded-full bg-red-500 w-4 h-4 text-xs text-white flex items-center justify-center">{{ cartItemCount }}</span>
+        
+        </li>
     </ul>
   </div>
 </nav>
 
-  <router-outlet>
-    <!-- On va afficher le composant à l'intérieur de cette balise -->
-  </router-outlet>
-  
+<router-outlet></router-outlet>

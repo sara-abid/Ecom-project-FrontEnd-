@@ -29,7 +29,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
-    MatPaginatorModule,
     FormsModule
   ],
   providers: [],

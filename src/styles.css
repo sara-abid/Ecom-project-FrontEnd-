@@ -7,11 +7,6 @@
 
 /* @media(max-width : 1231px) {} */
     
-/* Styles pour l'effet de déplacement 
-.move-on-hover {
-    transition: transform 0.3s ease-in-out;
-}
 
-.move-on-hover:hover {
-    transform: translateY(-10px);
-} */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

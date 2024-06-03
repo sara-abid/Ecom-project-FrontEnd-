@@ -33,3 +33,4 @@ Product = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6
     this.router.navigate (['/blog'])
   }
 }
+

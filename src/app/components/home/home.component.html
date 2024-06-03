@@ -1,18 +1,18 @@
-<div class=" home w-full grid grid-cols-1 gap-4 overflow-x-hidden">  
-      
-<section class="hero bg-[url('/assets/nature1.jpg')] bg-cover bg-center lg:bg-cover bg-no-repeat bg-fixed lg:rounded-bl-[350px] z-20">
-    <div class="container mx-auto text-center text-[#E8EEF3] p-16">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to BeeCom</h1>
-        <p class="text-lg md:text-xl ">" Bee the change you want to see "</p>
-        <button (click)="toShopClick()" class="inline-block mt-8 px-6 py-3 bg-white text-[#1D6042] hover:bg-[#E8EEF3] font-semibold rounded hover:[#9bbaa4] transition duration-300">
+<div class=" home w-full grid grid-cols-1 gap-4 overflow-x-hidden">
+
+    <section class="hero bg-[url('/assets/nature1.jpg')] bg-cover bg-center lg:bg-cover bg-no-repeat bg-fixed lg:rounded-bl-[350px] z-20">
+        <div class="container mx-auto text-center text-[#E8EEF3] p-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to BeeCom</h1>
+            <p class="text-lg md:text-xl ">" Bee the change you want to see "</p>
+            <button (click)="toShopClick()" class="inline-block mt-8 px-6 py-3 bg-white text-[#1D6042] hover:bg-[#E8EEF3] font-semibold rounded hover:[#9bbaa4] transition duration-300">
             Discover our products
         </button>
-    </div>
-</section>
+        </div>
+    </section>
 
-<section class=" text-center p-8 bg-[url(/assets/leafs.png)] bg-no-repeat bg-left">
+    <section class=" text-center p-8 bg-[url(/assets/leafs.png)] bg-no-repeat bg-left">
 
-        <h2 class="m-3 text-xl text-[#1D6042] overline pb-6"> POPULAR PRODUCTS </h2> 
+        <h2 class="m-3 text-xl text-[#1D6042] overline pb-6"> POPULAR PRODUCTS </h2>
 
         <!-- <div class="w-full flex">
             
@@ -29,7 +29,7 @@
             </ul>
         
         </div> -->
-          
+
         <div class="w-full flex ">
             <ul class="flex-shrink-0 flex justify-center space-x-12 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll " #productContainer>
                 <ng-container *ngFor="let prod of clonedProducts; let i = index">
@@ -59,190 +59,179 @@
                 </ng-container>
             </ul>
         </div>
-        
 
-</section>
 
-<section class="w-full mx-auto scroll-smooth focus:scroll-auto">
+    </section>
 
-    <div class="text-center">
-        <h2 class="m-3 text-xl text-[#1D6042] overline"> Our </h2>
-    </div>
+    <section class="w-full mx-auto scroll-smooth focus:scroll-auto">
 
-    <div class="bg-white dark:bg-gray-800 py-4 sm:py-6 lg:py-8">
-        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div class="text-center">
+            <h2 class="m-3 text-xl text-[#1D6042] overline"> Our </h2>
+        </div>
 
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                <!-- image - start -->
-                <a href="#"
-                    class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
-                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        <div class="bg-white dark:bg-gray-800 py-4 sm:py-6 lg:py-8">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
 
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+                    <!-- image - start -->
+                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
+                        <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">HOME</span>
-                </a>
-                <!-- image - end -->
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
 
-                <!-- image - start -->
-                <a href="#"
-                    class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
-                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">HOME</span>
+                    </a>
+                    <!-- image - end -->
 
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
+                    <!-- image - start -->
+                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
+                        <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">BEAUTY</span>
-                </a>
-                <!-- image - end -->
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
 
-                <!-- image - start -->
-                <a href="#"
-                    class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
-                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">BEAUTY</span>
+                    </a>
+                    <!-- image - end -->
 
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
+                    <!-- image - start -->
+                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
+                        <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">GARDEN</span>
-                </a>
-                <!-- image - end -->
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
 
-                <!-- image - start -->
-                <a href="#"
-                    class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
-                    <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">GARDEN</span>
+                    </a>
+                    <!-- image - end -->
 
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
+                    <!-- image - start -->
+                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
+                        <img src="/assets/nature1.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">GIFTS</span>
-                </a>
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
 
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">GIFTS</span>
+                    </a>
+
+                </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
-<section class="bg-[#fee5ce4f] bg-[url(/assets/leafs2.png)] bg-no-repeat bg-right-top py-6">
+    <section class="bg-[#fee5ce4f] bg-[url(/assets/leafs2.png)] bg-no-repeat bg-right-top py-6">
 
-    <div class="text-center pb-5">
-        <h2 class="  text-xl text-[#1D6042] overline"> WHY CHOOSE US </h2> 
-    </div>
+        <div class="text-center pb-5">
+            <h2 class="  text-xl text-[#1D6042] overline"> WHY CHOOSE US </h2>
+        </div>
 
-    <div class="grid md:grid-cols-3 max-w-screen-lg mx-auto gap-10 px-5">
+        <div class="grid md:grid-cols-3 max-w-screen-lg mx-auto gap-10 px-5">
 
-        <div class="hover:scale-105 flex gap-4 items-start flex-col text-center">
-            <div>
-                <h3 class="font-semibold text-xl">
-                    <span class="fas fa-seedling "></span> 
-                    Eco-friendly
-                </h3>
-                <p class="mt-1 text-gray-500"> By choosing BeeCom, you're not just making a purchase — you're making a positive impact on the environment. Every product contributes to a greener future.
-                </p>
+            <div class="hover:scale-105 flex gap-4 items-start flex-col text-center">
+                <div>
+                    <h3 class="font-semibold text-xl">
+                        <span class="fas fa-seedling "></span> Eco-friendly
+                    </h3>
+                    <p class="mt-1 text-gray-500"> By choosing BeeCom, you're not just making a purchase — you're making a positive impact on the environment. Every product contributes to a greener future.
+                    </p>
+                </div>
+            </div>
+
+            <div class="hover:scale-105 flex gap-4 items-start flex-col text-center">
+                <div>
+                    <h3 class="font-semibold text-xl">
+                        <span class="fas fa-truck "></span> Fast Shipping
+                    </h3>
+                    <p class="mt-1 text-gray-500"> Track your delivery in real-time with our transparent system. Stay updated from processing to delivery for peace of mind and confidence in our fast, reliable service.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="hover:scale-105 flex gap-4 items-start flex-col text-center ">
+                <div>
+                    <h3 class="font-semibold text-xl">
+                        <span class="fas fa-credit-card "></span> Online Payment
+                    </h3>
+                    <p class="mt-1 text-gray-500"> Experience peace of mind with our secure online payments, protecting your information. Say farewell to paper waste; we provide electronic transaction records, reducing environmental impact.
+                    </p>
+                </div>
             </div>
         </div>
-    
-        <div class="hover:scale-105 flex gap-4 items-start flex-col text-center">
-            <div>
-                <h3 class="font-semibold text-xl">
-                    <span class="fas fa-truck "></span>
-                    Fast Shipping
-                </h3>
-                <p class="mt-1 text-gray-500"> Track your delivery in real-time with our transparent system. Stay updated from processing to delivery for peace of mind and confidence in our fast, reliable service.
-                </p>
-            </div>
-        </div>
-    
-    
-        <div class="hover:scale-105 flex gap-4 items-start flex-col text-center ">
-            <div>
-                <h3 class="font-semibold text-xl">
-                    <span class="fas fa-credit-card "></span>
-                    Online Payment 
-                </h3>
-                <p class="mt-1 text-gray-500"> Experience peace of mind with our secure online payments, protecting your information. Say farewell to paper waste; we provide electronic transaction records, reducing environmental impact.
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <div class="text-center">
-        <p class="inline-block text-3xl underline mt-8 px-6 text-[#1D6042] animate-pulse font-semibold">
-            Be Part Of Our Journey!
-        </p>
-    </div>
-  
-</section>
+        <div class="text-center">
+            <p class="inline-block text-3xl underline mt-8 px-6 text-[#1D6042] animate-pulse font-semibold">
+                Be Part Of Our Journey!
+            </p>
+        </div>
 
-<section class=" ">
-    <div class="text-center ">
-        <h2 class="py-4 m-3 text-xl text-[#1D6042] overline"> RECENT ARTICLES </h2> 
-    </div>
+    </section>
+
+    <section class=" ">
+        <div class="text-center ">
+            <h2 class="py-4 m-3 text-xl text-[#1D6042] overline"> RECENT ARTICLES </h2>
+        </div>
 
         <div class="mx-auto grid max-w-screen-lg grid-cols-1 gap-5 p-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-10">
-      
-      <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
-        <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image"  />
-          <div class="w-full bg-white p-4">
-            <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
-            <p class="mb-2 text-xl font-medium text-black">A Visit to Mount Abignale</p>
-            <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
-            <div class="justify-starts mt-4 flex flex-wrap items-center">
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#nature</div>
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
-            </div>
-          </div>
-        </a>
-      </article>
-      
-      <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
-        <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image"  />
-          <div class="w-full bg-white p-4">
-            <p class="text-md font-medium text-[#1d6042cd]">Gardening</p>
-            <p class="mb-2 text-xl font-medium text-black">Sunflowers are my favorite</p>
-            <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
-            <div class="justify-starts mt-4 flex flex-wrap items-center">
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#js</div>
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
-            </div>
-          </div>
-        </a>
-      </article>
-      
-      <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
-        <a href="#" class="block h-full w-full">
-          <img class="max-h-40 w-full object-cover" alt="featured image"  />
-          <div class="w-full bg-white p-4">
-            <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
-            <p class="mb-2 text-xl font-medium text-black">Getting to know the Ice Factory Pattern</p>
-            <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
-            <div class="justify-starts mt-4 flex flex-wrap items-center">
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#js</div>
-              <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
-            </div>
-          </div>
-        </a>
-      </article>
-      
-    </div>
-    <div class="flex justify-center my-6">
-        <button (click)="toBlogClick()"  class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+
+            <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
+                <a href="#" class="block h-full w-full">
+                    <img class="max-h-40 w-full object-cover" alt="featured image" />
+                    <div class="w-full bg-white p-4">
+                        <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
+                        <p class="mb-2 text-xl font-medium text-black">A Visit to Mount Abignale</p>
+                        <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
+                        <div class="justify-starts mt-4 flex flex-wrap items-center">
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#nature</div>
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
+                <a href="#" class="block h-full w-full">
+                    <img class="max-h-40 w-full object-cover" alt="featured image" />
+                    <div class="w-full bg-white p-4">
+                        <p class="text-md font-medium text-[#1d6042cd]">Gardening</p>
+                        <p class="mb-2 text-xl font-medium text-black">Sunflowers are my favorite</p>
+                        <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
+                        <div class="justify-starts mt-4 flex flex-wrap items-center">
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#js</div>
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
+                <a href="#" class="block h-full w-full">
+                    <img class="max-h-40 w-full object-cover" alt="featured image" />
+                    <div class="w-full bg-white p-4">
+                        <p class="text-md font-medium text-[#1d6042cd]">Nature</p>
+                        <p class="mb-2 text-xl font-medium text-black">Getting to know the Ice Factory Pattern</p>
+                        <p class="text-md font-light text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse vel neque ipsam?</p>
+                        <div class="justify-starts mt-4 flex flex-wrap items-center">
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#js</div>
+                            <div class="mr-2 mt-1 rounded-2xl bg-[#9bbaa446] py-1.5 px-4 text-xs text-gray-600">#icefactory</div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+        <div class="flex justify-center my-6">
+            <button (click)="toBlogClick()" class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
             View More
         </button>
-    </div>
+        </div>
 
-  </section>
+    </section>
 
-    
+
 
 
 </div>

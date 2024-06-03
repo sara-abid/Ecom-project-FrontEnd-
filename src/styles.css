@@ -1,23 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
-
 /* @media(max-width : 1231px) {} */
-    
-<<<<<<< HEAD
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
-/* Styles pour l'effet de déplacement 
-.move-on-hover {
-    transition: transform 0.3s ease-in-out;
+html,
+body {
+    height: 100%;
 }
 
-.move-on-hover:hover {
-    transform: translateY(-10px);
-} */
->>>>>>> 7a0f9c7ff40f4a4dfc5931ae356281cacf2337e0
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -49,19 +49,19 @@ import { WebComponent } from './components/web/web.component';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-   
-   
+
+
     // MatButtonModule,
     // --------------------
     // RouterModule,
      FormsModule,
     HttpClientModule,
     // MatTableModule,
-    // MatPaginatorModule,
+    MatPaginatorModule,
     // MatCardModule,
     // MatFormFieldModule,
     // ToastrModule.forRoot(),
-    // DashboardModule
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

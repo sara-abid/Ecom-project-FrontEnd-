@@ -175,6 +175,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DataSource } from '@angular/cdk/collections';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModel } from '../components/Shared/shared.module';
+import { SubcategoriesComponent } from './subcategories/subcategories.component';
 
 @NgModule({
   declarations: [
@@ -192,7 +193,8 @@ import { SharedModel } from '../components/Shared/shared.module';
     ProductDetailComponent,
     CustomerDetailsComponent,
     CommentsComponent,
-    ErrorComponent
+    ErrorComponent,
+    SubcategoriesComponent
   ],
   imports: [
     CommonModule,

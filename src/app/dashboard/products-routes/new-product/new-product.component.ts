@@ -44,7 +44,7 @@ export class NewProductComponent implements OnInit {
       category: ['', Validators.required],
       discount: ['', Validators.required],
       quantity: ['', Validators.required],
-      tag: [''],
+      // tag: [''],
       featured: [false]
     });
   }
@@ -54,6 +54,7 @@ export class NewProductComponent implements OnInit {
     this.getAllTgas();
 
     this.getAllcategories();
+
 
   }
 

@@ -21,10 +21,8 @@ export class ProductsComponent implements OnInit {
     'price',
     'discount',
     'category',
-    'tag',
-    'featured',
-    'firstDate',
-    'updateDate',
+    'subactegory',
+
   ];
 
   products: any[] = [];
@@ -69,23 +67,23 @@ export class ProductsComponent implements OnInit {
     return updatedDate === firstDate ? 'text-black' : 'font-medium text-green-600';
 
   }
-  
+
   //price formatteur
   public formatPrice(price:any) {
     if (typeof price === 'string') {
-      
+
       if (price.includes('$')) {
-       
+
         return price.replace('$', '') + '$';
       } else {
-        
+
         return price + '$';
       }
     } else if (typeof price === 'number') {
-      
+
       return price.toString() + '$';
     } else {
-      
+
       return 'N/A';
     }
   }

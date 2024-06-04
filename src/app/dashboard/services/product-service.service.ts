@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class ProductServiceService {
 
-  private apiUrl = 'http://localhost:3000/api/v1/products';
+  private apiUrl = 'http://localhost:8080/product';
 
   constructor(private http: HttpClient) { }
 
@@ -16,26 +16,30 @@ export class ProductServiceService {
 
   }
 
-  public postProduct(productData: any): Observable<any> {
-    return this.http.post(this.apiUrl, JSON.stringify(productData));
-  }
+  // public postProduct(productData: any): Observable<any> {
+  //   return this.http.post(this.apiUrl, JSON.stringify(productData));
+  // }
 
+
+  addProductToSubcategories(productDto: any, subcategoryIds: number[]) {
+    return this.http.post<any>('your_backend_url_here', { productDto, subcategoryIds });
+  }
   public deleteAllProducts(): Observable<any> {
     return this.http.delete(this.apiUrl);
   }
 
   public updateProductById(productId: string, productData: any): Observable<any> {
-    const updateUrl = `${this.apiUrl}/product/${productId}`;
+    const updateUrl = `${this.apiUrl}/${productId}`;
     return this.http.patch(updateUrl, productData);
   }
 
   public deleteProductById(productId: string): Observable<any> {
-    const deleteUrl = `${this.apiUrl}/product/${productId}`;
+    const deleteUrl = `${this.apiUrl}/${productId}`;
     return this.http.delete(deleteUrl);
   }
 
   public getProductById(productId: string): Observable<any> {
-    const getUrl = `${this.apiUrl}/product/${productId}`;
+    const getUrl = `${this.apiUrl}/${productId}`;
     return this.http.get(getUrl);
   }
 

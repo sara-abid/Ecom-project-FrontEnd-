@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router:Router) {}
 Product = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6"]
-  
+
   // @ViewChild('productContainer') productContainer!: ElementRef;
 
   clonedProducts: string[] = [];
@@ -19,7 +19,7 @@ Product = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6
   }
 
   createClonedProducts() {
-    const clonedProductsCount = 4; 
+    const clonedProductsCount = 4;
     for (let i = 0; i < clonedProductsCount; i++) {
       this.clonedProducts.push(...this.Product);
     }
@@ -33,3 +33,4 @@ Product = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6
     this.router.navigate (['/blog'])
   }
 }
+

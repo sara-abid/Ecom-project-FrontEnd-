@@ -61,7 +61,7 @@ import { WebComponent } from './components/web/web.component';
     // MatCardModule,
     // MatFormFieldModule,
     // ToastrModule.forRoot(),
-    DashboardModule
+    // DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

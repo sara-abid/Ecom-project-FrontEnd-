@@ -1,1 +1,29 @@
-<p>shop works!</p>
+<section class="">
+    <div class="flex justify-start bg-gray-200 font-sans ">
+            <div class="flex flex-col  sm:flex-row sm:justify-around">
+                <div class="w-64 h-screen bg-[#1D6042]">
+                    <nav class="mt-10">
+                        <div>
+                            <button (click)="toggleCategorie()" class="w-full flex justify-between  py-3 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+                                <span class="flex items-center">
+                                    <span class="mx-4 font-medium">HOME</span>
+                                </span>
+                                <span>
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                                        <path *ngIf="!categorieOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path *ngIf="categorieOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        <div *ngIf="categorieOpen" class="bg-gray-100">
+                            <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+                            <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    </section>
+
+

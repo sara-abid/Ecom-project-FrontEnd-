@@ -10,6 +10,7 @@ import { UserService } from 'src/app/serviceApp/user.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
   constructor(private userService: UserService, private router: Router) { }
 
   login() {
@@ -25,11 +26,11 @@ export class LoginComponent {
       response => {
         // Connexion réussie, rediriger vers la page d'accueil ou une autre page
         alert('Connexion réussie!');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/shop']);
       },
       error => {
         console.error('Erreur lors de la connexion', error);
-        // Afficher un message d'erreur à l'utilisateur, par exemple avec une alerte ou un message dans l'interface utilisateur
+        this.errorMessage = 'Incorrect email address or password.';
       }
     );
   }

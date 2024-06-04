@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/serviceApp/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router)  { }
 
   register(form: any) {
     const userData = {
@@ -29,6 +30,7 @@ export class RegisterComponent {
       response => {
         console.log('Inscription réussie', response);
         // Redirection ou affichage d'un message de succès
+        this.router.navigate(['/login']);
         alert('Inscription réussie!');
       },
       error => {

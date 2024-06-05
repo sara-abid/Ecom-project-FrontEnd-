@@ -1,5 +1,5 @@
-<!--<p>categories works!</p>-->
-<!--&lt;!&ndash;&ndash;&gt;-->
+
+
 
 <div class="px-5 w-full">
     <div class="mt-5  w-full gap-3 border-b border-black pb-5">
@@ -70,27 +70,38 @@
     </div>
 </div>
 
-<!--<div class="p-4">-->
-<!--  <h2 class="text-2xl font-bold mb-4">Categories</h2>-->
-<!--  <ul class="space-y-2">-->
-<!--    <li *ngFor="let category of categories" class="bg-gray-100 p-4 rounded-md">-->
-<!--      <h3 class="text-lg font-medium">{{ category.categoryName }}</h3>-->
-<!--      <p class="text-gray-600">{{ category.categoryDescripton }}</p>-->
-<!--    </li>-->
-<!--  </ul>-->
 
-<!--  <h3 class="text-xl font-bold mt-8 mb-4">Create a new category</h3>-->
-<!--  <form (ngSubmit)="createCategory()" class="space-y-4">-->
-<!--    <div>-->
-<!--      <label for="categoryName" class="block font-medium mb-1">Name:</label>-->
-<!--      <input type="text" id="categoryName" [(ngModel)]="newCategory.categoryName" name="categoryName" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500" required>-->
-<!--    </div>-->
 
-<!--    <div>-->
-<!--      <label for="categoryDescription" class="block font-medium mb-1">Description:</label>-->
-<!--      <textarea id="categoryDescription" [(ngModel)]="newCategory.categoryDescripton" name="categoryDescription" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500" required></textarea>-->
-<!--    </div>-->
-
-<!--    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md">Create</button>-->
-<!--  </form>-->
-<!--</div>-->
+ <!-- <div>
+    <h2>Categories</h2>
+  
+    <div>
+      <h3 *ngIf="editMode">Edit Category</h3>
+      <h3 *ngIf="!editMode">Add Category</h3>
+      <form (ngSubmit)="editMode ? updateCategory() : addCategory()">
+        <div>
+          <label>Name</label>
+          <input type="text" [(ngModel)]="editMode ? selectedCategory?.categoryName : newCategory.categoryName" name="name" required>
+        </div>
+        <div>
+          <label>Description</label>
+          <input type="text" [(ngModel)]="editMode ? selectedCategory?.categoryDescription : newCategory.categoryDescription" name="description" required>
+        </div>
+        <button type="submit">{{ editMode ? 'Update' : 'Add' }} Category</button>
+        <button type="button" (click)="clearSelection()" *ngIf="editMode">Cancel</button>
+      </form>
+    </div>
+  
+    <ul>
+      <li *ngFor="let category of categories">
+        <h3>{{ category.categoryName }}</h3>
+        <p>{{ category.categoryDescription }}</p>
+        <button (click)="selectCategory(category)">Edit</button>
+        <button (click)="deleteCategory(category.categoryId)">Delete</button>
+      </li>
+    </ul>
+  
+    <button (click)="deleteAllCategories()" *ngIf="categories.length > 0">Delete All Categories</button>
+    <p *ngIf="categories.length === 0">No categories available.</p>
+  </div>
+   -->

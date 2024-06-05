@@ -1,6 +1,9 @@
-export class Category{
-  constructor(public categoryId: number,
-              public categoryName: string,
-              public categoryDescripton : string) {
-  }
+import { Subcategory } from "./subcategory";
+
+export interface Category {
+  categoryId: number;
+  categoryName: string;
+  categoryDescription: string;
+  subcategoryList?: Subcategory[];
 }
+

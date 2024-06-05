@@ -84,8 +84,9 @@
       <div class="flex items-center space-x-4">
         <span class="text-lg font-medium">{{ product.productName }}</span>
         <span class="text-gray-500">${{ product.price }}</span>
-        <span class="text-gray-500">${{ product.imageDto }}</span>
+        <img [src]="product.imageUrl" alt="{{ product.productName }}">
       </div>
+      
       <div class="space-x-2">
         <button (click)="getProductById(product.id)" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Details</button>
         <button (click)="deleteProduct(product.id)" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Delete</button>

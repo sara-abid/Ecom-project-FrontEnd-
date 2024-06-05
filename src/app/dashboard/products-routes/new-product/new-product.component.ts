@@ -161,7 +161,7 @@ export class NewProductComponent implements OnInit {
 //   }
 
 //   --------------------------------------------------------------------------
-  products: Product[] = [];
+  products: any = [];
   newProduct: { price: number; imageDto: null; description: string; productName: string } = { productName: '', description: '', price: 0, imageDto: null };
   subcategoryIds: number[] = [];  // Adjust according to your needs
   errorMessage: string = '';

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {CategoriesService} from "../services/categories.service";
+import { Category } from '../models/category';
 
 @Component({
   selector: 'app-categories',
@@ -172,49 +173,98 @@ export class CategoriesComponent {
 
   }
 
+  // categories: Category[] = [];
+  // selectedCategory: Category | null = null;
+  // newCategory: Category = { categoryId: 0, categoryName: '', categoryDescription: '', subcategoryList: [] };
+  // editMode: boolean = false;
+
+  // constructor(private categoriesService: CategoriesService) {}
+
+  // ngOnInit(): void {
+  //   this.loadCategories();
+  // }
+
+  // loadCategories(): void {
+  //   this.categoriesService.getAllCategories().subscribe(
+  //     (data: Category[]) => {
+  //       this.categories = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching categories', error);
+  //     }
+  //   );
+  // }
+
+  // getCategoryById(id: number): void {
+  //   this.categoriesService.getCategoryById(id).subscribe(
+  //     (category: Category) => {
+  //       this.selectedCategory = category;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching category', error);
+  //     }
+  //   );
+  // }
+
+  // addCategory(): void {
+  //   this.categoriesService.addCategory(this.newCategory).subscribe(
+  //     () => {
+  //       this.loadCategories();
+  //       this.newCategory = { categoryId: 0, categoryName: '', categoryDescription: '', subcategoryList: [] };
+  //     },
+  //     (error) => {
+  //       console.error('Error adding category', error);
+  //     }
+  //   );
+  // }
+
+  // updateCategory(): void {
+  //   if (this.selectedCategory && this.selectedCategory.categoryId) {
+  //     this.categoriesService.updateCategory(this.selectedCategory.categoryId, this.selectedCategory).subscribe(
+  //       () => {
+  //         this.loadCategories();
+  //         this.selectedCategory = null;
+  //         this.editMode = false;
+  //       },
+  //       (error) => {
+  //         console.error('Error updating category', error);
+  //       }
+  //     );
+  //   }
+  // }
+
+  // deleteCategory(id: number): void {
+  //   this.categoriesService.deleteCategory(id).subscribe(
+  //     () => {
+  //       this.loadCategories();
+  //     },
+  //     (error) => {
+  //       console.error('Error deleting category', error);
+  //     }
+  //   );
+  // }
+
+  // deleteAllCategories(): void {
+  //   this.categoriesService.deleteAllCategories().subscribe(
+  //     () => {
+  //       this.loadCategories();
+  //     },
+  //     (error) => {
+  //       console.error('Error deleting all categories', error);
+  //     }
+  //   );
+  // }
+
+  // selectCategory(category: Category): void {
+  //   this.selectedCategory = { ...category };
+  //   this.editMode = true;
+  // }
+
+  // clearSelection(): void {
+  //   this.selectedCategory = null;
+  //   this.editMode = false;
+  // }
+
 
 }
 
-// import { Component, OnInit } from '@angular/core';
-// import {CategoriesService} from "../services/categories.service";
-// import {Category} from "../models/category";
-//
-//
-// @Component({
-//   selector: 'app-categories',
-//   templateUrl: './categories.component.html',
-//   styleUrls: ['./categories.component.css']
-// })
-// export class CategoriesComponent implements OnInit {
-//   categories: Category[] = [];
-//   newCategory: Category = new Category(0, '', '');
-//
-//   constructor(private categoryService: CategoriesService) { }
-//
-//   ngOnInit(): void {
-//     this.loadCategories();
-//   }
-//
-//   loadCategories(): void {
-//     this.categoryService.getAllCategories().subscribe(
-//       (data) => {
-//         this.categories = data;
-//       },
-//       (error) => {
-//         console.error('Error loading categories:', error);
-//       }
-//     );
-//   }
-//
-//   createCategory(): void {
-//     this.categoryService.createCategory(this.newCategory).subscribe(
-//       (data) => {
-//         this.categories.push(data);
-//         this.newCategory = new Category(0, '', '');
-//       },
-//       (error) => {
-//         console.error('Error creating category:', error);
-//       }
-//     );
-//   }
-// }

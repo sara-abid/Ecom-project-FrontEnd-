@@ -1,0 +1,19 @@
+.notification {
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeInOut 3s forwards;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  

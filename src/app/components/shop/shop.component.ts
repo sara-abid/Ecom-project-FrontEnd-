@@ -1,90 +1,75 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
-
-
-interface Product {
-  name: string;
-  price: number;
-}
+import { Product, ProductService } from 'src/app/serviceApp/product.service';
+import { CartService } from 'src/app/serviceApp/cart.service';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-
 export class ShopComponent implements OnInit {
+
   homeOpen = false;
   beautyOpen = false;
   gardenOpen = false;
   giftOpen = false;
-  minValue: number = 0;  
-  maxValue: number = 1000;  
+  minValue: number = 0;
+  maxValue: number = 1000;
   isMobileMenuOpen = false;
   currentPage: number = 1;
   itemsPerPage: number = 12;
 
-  products: Product[] = [
-    { name: 'Nike Air Max 2019', price: 259 },
-    { name: 'Nike Air Max 2020', price: 500 },
-    { name: 'Adidas Ultra Boost', price: 750 },
-    { name: 'Nike Air Max 2019', price: 259 },
-    { name: 'Nike Air Max 2020', price: 500 },
-    { name: 'Adidas Ultra Boost', price: 750 },
-    { name: 'Nike Air Max 2019', price: 259 },
-    { name: 'Nike Air Max 2020', price: 500 },
-    { name: 'Adidas Ultra Boost', price: 750 },
-    { name: 'Nike Air Max 2019', price: 259 },
-    { name: 'Nike ', price: 500 },
-    { name: 'Adidas ', price: 750 },
-    { name: 'Nike Air Max 2019', price: 300 },
-    { name: 'Nike Air Max 2020', price: 500 },
-    { name: 'Adidas Ultra Boost', price: 750 },
-    { name: 'Nike Air Max 2019', price: 259 },
-    { name: 'Nike Air Max 2020', price: 500 },
-    { name: 'Adidas Ultra Boost', price: 750 },
-  ];
-
   filteredProducts: Product[] = [];
 
-  constructor() {}
+  products: Product[] = [];
+
+
+  constructor(
+    private productService: ProductService,
+    private cartService: CartService,
+  ) {}
 
   ngOnInit(): void {
-    this.filterProducts();
+    this.products = this.productService.getProducts();
+    this.filteredProducts = [...this.products];
   }
 
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+    // this.toastrService.success("Product added ")
+  }
+
+
   toggleCategorie(buttonNumber: number): void {
-    if (buttonNumber === 1) {
-      this.homeOpen = !this.homeOpen;
-      this.beautyOpen = false;
-      this.gardenOpen = false;
-      this.giftOpen = false;
-    } else if (buttonNumber === 2) {
-      this.beautyOpen = !this.beautyOpen;
-      this.homeOpen = false;
-      this.gardenOpen = false;
-      this.giftOpen = false;
-    } else if (buttonNumber === 3) {
-      this.gardenOpen = !this.gardenOpen;
-      this.beautyOpen = false;
-      this.homeOpen = false;
-      this.giftOpen = false;
-    } else if (buttonNumber === 4) {
-      this.gardenOpen = false;
-      this.beautyOpen = false;
-      this.homeOpen = false;
-      this.giftOpen = !this.giftOpen;
+    switch (buttonNumber) {
+      case 1:
+        this.homeOpen = !this.homeOpen;
+        this.beautyOpen = this.gardenOpen = this.giftOpen = false;
+        break;
+      case 2:
+        this.beautyOpen = !this.beautyOpen;
+        this.homeOpen = this.gardenOpen = this.giftOpen = false;
+        break;
+      case 3:
+        this.gardenOpen = !this.gardenOpen;
+        this.beautyOpen = this.homeOpen = this.giftOpen = false;
+        break;
+      case 4:
+        this.giftOpen = !this.giftOpen;
+        this.beautyOpen = this.gardenOpen = this.homeOpen = false;
+        break;
     }
   }
+
 
   public sortProductsDesc(): void {
     this.filteredProducts = [...this.filteredProducts].sort((a, b) => a.price - b.price);
   }
-
   public sortProductsAsc(): void {
     this.filteredProducts = [...this.filteredProducts].sort((a, b) => b.price - a.price);
   }
-
-  filterProducts(): void {
+filterProducts(): void {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     const filtered = this.products.filter(product => 

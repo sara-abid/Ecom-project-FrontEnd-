@@ -1,6 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import { Product, ProductService } from 'src/app/serviceApp/product.service';
-//import { Product, ProductService} from 'src/app/service/product.service';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "src/app/serviceApp/cart.service";
+import { Product } from "src/app/serviceApp/product.service";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,32 +8,33 @@ import { Product, ProductService } from 'src/app/serviceApp/product.service';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  products: Product[] = [];
+  cart: Product[] = [];
   subtotal: number = 0;
   shipping: number = 4.99;
   total: number = 0;
 
-  constructor(private productService: ProductService) { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.cart = this.cartService.getCart();
     this.calculateTotal();
   }
 
-  calculateTotal() {
-    this.subtotal = this.products.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+  calculateTotal(): void {
+    this.subtotal = this.cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
     this.total = this.subtotal + this.shipping;
   }
 
-  updateQuantity(productId: number, quantity: number) {
-    if (quantity < 1) return;
-    this.productService.updateQuantity(productId, quantity);
+  updateQuantity(productId: number, quantity: number): void {
+    if (quantity < 1) return; // Prevent negative quantities
+    this.cartService.updateQuantity(productId, quantity);
+    this.cart = this.cartService.getCart();
     this.calculateTotal();
   }
 
-  removeProduct(productId: number) {
-    this.productService.removeProduct(productId);
-    this.products = this.productService.getProducts();
+  removeProduct(productId: number): void {
+    this.cartService.removeProduct(productId);
+    this.cart = this.cartService.getCart();
     this.calculateTotal();
   }
 }

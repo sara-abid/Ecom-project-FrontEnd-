@@ -14,7 +14,7 @@ export class SubcategoryService {
   private baseUrl = 'http://localhost:8080/subcategories'; // Adjust the base URL as necessary
 
   constructor(private http: HttpClient) { }
-
+  //
   getAll(): Observable<Subcategory[]> {
     return this.http.get<Subcategory[]>(`${this.baseUrl}`);
   }
@@ -38,4 +38,5 @@ export class SubcategoryService {
   deleteAll(): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}`);
   }
+
 }

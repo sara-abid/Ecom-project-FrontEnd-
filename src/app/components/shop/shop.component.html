@@ -1,29 +1,250 @@
-<section class="">
-    <div class="flex justify-start bg-gray-200 font-sans ">
-            <div class="flex flex-col  sm:flex-row sm:justify-around">
-                <div class="w-64 h-screen bg-[#1D6042]">
-                    <nav class="mt-10">
-                        <div>
-                            <button (click)="toggleCategorie()" class="w-full flex justify-between  py-3 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
-                                <span class="flex items-center">
-                                    <span class="mx-4 font-medium">HOME</span>
-                                </span>
-                                <span>
-                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
-                                        <path *ngIf="!categorieOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path *ngIf="categorieOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                        <div *ngIf="categorieOpen" class="bg-gray-100">
-                            <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
-                            <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-    </section>
-    
+<div class="md:grid md:grid-cols-3 overflow-hidden">
 
+  <div class="md:flex md:justify-start col-span-1 h-100%">
+      <!-- Hamburger Button -->
+      <div class="sm:hidden items-center justify-end p-4">
+        <button (click)="toggleMobileMenu()" class="text-[#1D6042] focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    
+      <!-- Navigation Menu -->
+      <nav class="hidden sm:flex justify-start bg-white font-sans">
+        <div class="flex flex-col sm:flex-row sm:justify-around w-full">
+          <div class="w-64  bg-[#fee5ce4f] rounded-tr-3xl">
+            <div class="mt-10">
+              <div class="">
+                <h3 class="ml-7 my-4 text-xl font-bold tracking-wide text-[#1D6042]">Categories</h3>
+                <button (click)="toggleCategorie(1)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+                  <span class="flex items-center">
+                    <span class="mx-4 font-medium">HOME</span>
+                  </span>
+                  <span>
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <path *ngIf="!homeOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path *ngIf="homeOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div *ngIf="homeOpen" class="bg-white">
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+                </div>
+              </div>
+              <div>
+                <button (click)="toggleCategorie(2)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+                  <span class="flex items-center">
+                    <span class="mx-4 font-medium">BEAUTY</span>
+                  </span>
+                  <span>
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <path *ngIf="!beautyOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path *ngIf="beautyOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div *ngIf="beautyOpen" class="bg-white">
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+                </div>
+              </div>
+              <div>
+                <button (click)="toggleCategorie(3)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+                  <span class="flex items-center">
+                    <span class="mx-4 font-medium">GARDEN</span>
+                  </span>
+                  <span>
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <path *ngIf="!gardenOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path *ngIf="gardenOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div *ngIf="gardenOpen" class="bg-white">
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+                </div>
+              </div>
+              <div>
+                <button (click)="toggleCategorie(4)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+                  <span class="flex items-center">
+                    <span class="mx-4 font-medium">GIFT</span>
+                  </span>
+                  <span>
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <path *ngIf="!giftOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path *ngIf="giftOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </button>
+                <div *ngIf="giftOpen" class="bg-white">
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+                  <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+                </div>
+              </div>
+              <div>
+                <h3 class="ml-7 my-4 text-xl font-bold tracking-wide text-[#1D6042]">Price</h3>
+                <div>
+                  <mat-slider [min]="0" [max]="1000" style="width: 80%; margin-left: 8%;" color="success" (change)="filterProducts()">
+                    <input matSliderStartThumb [(ngModel)]="minValue">
+                    <input matSliderEndThumb [(ngModel)]="maxValue">
+                  </mat-slider>
+                </div>
+                <div class="flex justify-between text-xs px-2 text-[#1D6042]">
+                  <div class="">
+                    <p>Min: {{minValue}} MAD</p>
+                  </div>
+                  <div class="flex justify-end">
+                    <p>Max: {{maxValue}} MAD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Mobile Menu -->
+      <div *ngIf="isMobileMenuOpen" class="sm:hidden fixed inset-0 bg-white z-50">
+        <div class="flex justify-end p-4">
+          <button (click)="toggleMobileMenu()" class="text-[#1D6042] focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col">
+          <!-- Categories and Price Slider for Mobile -->
+          <div class="">
+            <h3 class="ml-7 my-4 text-xl font-bold tracking-wide text-[#1D6042]">Categories</h3>
+            <button (click)="toggleCategorie(1)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+              <span class="flex items-center">
+                <span class="mx-4 font-medium">HOME</span>
+              </span>
+              <span>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <path *ngIf="!homeOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path *ngIf="homeOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </button>
+            <div *ngIf="homeOpen" class="bg-white">
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+            </div>
+          </div>
+          <div>
+            <button (click)="toggleCategorie(2)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+              <span class="flex items-center">
+                <span class="mx-4 font-medium">BEAUTY</span>
+              </span>
+              <span>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <path *ngIf="!beautyOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path *ngIf="beautyOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </button>
+            <div *ngIf="beautyOpen" class="bg-white">
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+            </div>
+          </div>
+          <div>
+            <button (click)="toggleCategorie(3)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+              <span class="flex items-center">
+                <span class="mx-4 font-medium">GARDEN</span>
+              </span>
+              <span>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <path *ngIf="!gardenOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path *ngIf="gardenOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </button>
+            <div *ngIf="gardenOpen" class="bg-white">
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+            </div>
+          </div>
+          <div>
+            <button (click)="toggleCategorie(4)" class="w-full flex justify-between py-2 px-6 text-[#9bbaa4] hover:text-[#E8EEF3] cursor-pointer focus:outline-none">
+              <span class="flex items-center">
+                <span class="mx-4 font-medium">GIFT</span>
+              </span>
+              <span>
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <path *ngIf="!giftOpen" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path *ngIf="giftOpen" d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </button>
+            <div *ngIf="giftOpen" class="bg-white">
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Accounts</a>
+              <a class="py-2 px-16 block text-sm text-gray-600 hover:bg-[#9bbaa4]" href="#">Manage Tickets</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="ml-7 my-4 text-xl font-bold tracking-wide text-[#1D6042]">Price</h3>
+            <div>
+              <mat-slider [min]="0" [max]="1000" style="width: 80%; margin-left: 8%;" color="success" (change)="filterProducts()">
+                <input matSliderStartThumb [(ngModel)]="minValue">
+                <input matSliderEndThumb [(ngModel)]="maxValue">
+              </mat-slider>
+            </div>
+            <div class="flex justify-between text-xs px-2 text-[#1D6042]">
+              <div class="">
+                <p>Min: {{minValue}} MAD</p>
+              </div>
+              <div class="flex justify-end">
+                <p>Max: {{maxValue}} MAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <div class="flex flex-wrap content-start col-span-2 w-full xl:-ml-10">
+  
+    <div class="flex justify-end pt-6 w-full ">
+      <button (click)="sortProductsAsc()" class="rounded-xl underline py-2 px-4 text-[#1D6042] hover:bg-[#1d604224]">Sort Asc</button>
+      <button (click)="sortProductsDesc()" class="rounded-xl underline py-2 px-4 text-[#1D6042] hover:bg-[#1d604224]">Sort Desc</button>
+    </div>
+  
+      <div class="rounded-lg p-4 col-span-3" *ngFor="let product of filteredProducts">
+        <div class="">
+          <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="product-image" class="w-full rounded-lg sm:w-40" />
+          <div class="">
+            <div class="mt-5 sm:mt-0">
+              <h2 class="text-lg text-center font-bold text-gray-900">{{ product.name }}</h2>
+            </div>
+            <div class="mt-4 sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+              <div class="flex items-center space-x-4 justify-center">
+                <p class="text-sm ">{{ product.price }} MAD</p>
+              </div>
+            </div>
+  
+            <div class="flex justify-between items-center my-3 rounded-md border-2 border-[#1D6042]  hover:bg-[#9bbaa4]">
+              <button class="pl-4 border-spacing-2">Add To Cart</button>
+              <i class="pr-4 fas fa-cart-plus"></i>
+            </div>
+  
+              
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex justify-center w-screen py-6">
+        <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" class="px-4 py-2 mx-2 bg-[#1D6042] text-white rounded-lg">Previous</button>
+        <span class="px-4 py-2 mx-2 text-[#1D6042]">{{ currentPage }} / {{ totalPages }}</span>
+        <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages" class="px-4 py-2 mx-2 bg-[#1D6042] text-white rounded-lg">Next</button>
+      </div>
+  </div>
+  
+  
+  
+  
+  </div> 

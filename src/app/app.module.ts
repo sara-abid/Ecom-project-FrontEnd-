@@ -14,6 +14,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -45,7 +46,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    //MatProgressSpinnerModule,
+    MatSliderModule,
     BrowserAnimationsModule,
     //SharedModule,
     DashboardModule

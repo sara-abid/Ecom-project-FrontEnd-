@@ -174,3 +174,47 @@ export class CategoriesComponent {
 
 
 }
+
+// import { Component, OnInit } from '@angular/core';
+// import {CategoriesService} from "../services/categories.service";
+// import {Category} from "../models/category";
+//
+//
+// @Component({
+//   selector: 'app-categories',
+//   templateUrl: './categories.component.html',
+//   styleUrls: ['./categories.component.css']
+// })
+// export class CategoriesComponent implements OnInit {
+//   categories: Category[] = [];
+//   newCategory: Category = new Category(0, '', '');
+//
+//   constructor(private categoryService: CategoriesService) { }
+//
+//   ngOnInit(): void {
+//     this.loadCategories();
+//   }
+//
+//   loadCategories(): void {
+//     this.categoryService.getAllCategories().subscribe(
+//       (data) => {
+//         this.categories = data;
+//       },
+//       (error) => {
+//         console.error('Error loading categories:', error);
+//       }
+//     );
+//   }
+//
+//   createCategory(): void {
+//     this.categoryService.createCategory(this.newCategory).subscribe(
+//       (data) => {
+//         this.categories.push(data);
+//         this.newCategory = new Category(0, '', '');
+//       },
+//       (error) => {
+//         console.error('Error creating category:', error);
+//       }
+//     );
+//   }
+// }

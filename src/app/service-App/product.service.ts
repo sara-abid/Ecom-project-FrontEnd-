@@ -13,7 +13,7 @@ export interface Product {
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductServiceApp {
 
 
   private products: Product[] = [
@@ -64,4 +64,6 @@ export class ProductService {
     this.products = this.products.filter(p => p.id !== productId);
     this.cartSubject.next(this.products);
   }
+
+
 }

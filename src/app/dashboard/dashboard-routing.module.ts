@@ -81,6 +81,7 @@ import { ErrorComponent } from './error/error.component';
 import { ProductsComponent } from './products-routes/products/products.component';
 import { NewProductComponent } from './products-routes/new-product/new-product.component';
 import { ProductDetailComponent } from './products-routes/product-detail/product-detail.component';
+import {SubcategoriesComponent} from "./subcategories/subcategories.component";
 const routes: Routes = [
   {
     path: '',
@@ -96,6 +97,7 @@ const routes: Routes = [
       { path: 'tags', component: TagsComponent },
       { path: 'customers', component: CustomersComponent },
       { path: 'categories', component: CategoriesComponent },
+      { path: 'subcategories', component: SubcategoriesComponent },
       { path: 'comments', component: CommentsComponent },
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
       { path: '**', component: ErrorComponent }

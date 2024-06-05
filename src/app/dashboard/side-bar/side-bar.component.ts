@@ -48,7 +48,7 @@ export class SideBarComponent {
           name: 'customers',
           icon: 'fa-solid fa-users',
         }, {
-          name: 'tags',
+          name: 'subcategories',
           icon: 'fa-solid fa-tag'
         }
       ],

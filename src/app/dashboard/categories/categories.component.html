@@ -1,71 +1,105 @@
-<!--<p>categories works!</p>-->
-<!--&lt;!&ndash;&ndash;&gt;-->
+<!--<div>-->
+<!--  <h2>Categories</h2>-->
+<!--  <ul>-->
+<!--    <li *ngFor="let category of categories" (click)="selectCategory(category)">-->
+<!--      {{ category.categoryName }} - {{ category.categoryDescription }}-->
+<!--    </li>-->
+<!--  </ul>-->
 
-<div class="px-5 w-full">
-    <div class="mt-5  w-full gap-3 border-b border-black pb-5">
-        <h2 class="text-3xl font-bold tracking-tight">
-            Categories
-        </h2>
-        <p class="text-sm text-neutral-500 font-light">
-            Manage Categories
-        </p>
+<!--  <div *ngIf="selectedCategory">-->
+<!--    <h3>Edit Category</h3>-->
+<!--    <input [(ngModel)]="selectedCategory.categoryName" placeholder="Name">-->
+<!--    <input [(ngModel)]="selectedCategory.categoryDescription" placeholder="Description">-->
+<!--    <button (click)="updateCategory(selectedCategory)">Update</button>-->
+<!--    <button (click)="deleteCategory(selectedCategory.categoryId)">Delete</button>-->
+<!--    <button (click)="clearSelection()">Clear</button>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <h3>Add New Category</h3>-->
+<!--    <input [(ngModel)]="newCategory.categoryName" placeholder="Name">-->
+<!--    <input [(ngModel)]="newCategory.categoryDescription" placeholder="Description">-->
+<!--    <button (click)="addCategory()">Add</button>-->
+<!--  </div>-->
+
+<!--  <button (click)="deleteAllCategories()">Delete All Categories</button>-->
+<!--</div>-->
+
+
+<div class="container mx-auto p-4">
+  <div class="mb-4 p-4 border rounded-md bg-gray-50">
+    <h3 class="text-xl font-semibold mb-2">Add New Category</h3>
+    <input [(ngModel)]="newCategory.categoryName"
+           placeholder="Name"
+           class="w-full p-2 mb-2 border border-gray-300 rounded-md">
+    <input [(ngModel)]="newCategory.categoryDescription"
+           placeholder="Description"
+           class="w-full p-2 mb-2 border border-gray-300 rounded-md">
+    <button (click)="addCategory()"
+            class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Add</button>
+  </div>
+
+  <button (click)="deleteAllCategories()"
+          class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Delete All Categories</button>
+
+
+<!--  <h2 class="text-2xl font-bold mb-4">Categories</h2>-->
+<!--  <ul class="mb-4">-->
+<!--    <li *ngFor="let category of categories"-->
+<!--        (click)="selectCategory(category)"-->
+<!--        class="cursor-pointer p-2 border-b border-gray-300 hover:bg-gray-100">-->
+<!--      {{ category.categoryName }} - {{ category.categoryDescription }}-->
+<!--    </li>-->
+<!--  </ul>-->
+  <h2 class="text-2xl font-bold mb-4">Categories</h2>
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category Name</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category Description</th>
+    </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+    <tr *ngFor="let category of categories" (click)="selectCategory(category)" class="cursor-pointer hover:bg-gray-100">
+      <td class="px-6 py-4 whitespace-nowrap">{{ category.categoryName }}</td>
+      <td class="px-6 py-4 whitespace-nowrap">{{ category.categoryDescription }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedCategory" class="mb-4 p-4 border rounded-md bg-gray-50">
+    <h3 class="text-xl font-semibold mb-2">Edit Category</h3>
+    <input [(ngModel)]="selectedCategory.categoryName"
+           placeholder="Name"
+           class="w-full p-2 mb-2 border border-gray-300 rounded-md">
+    <input [(ngModel)]="selectedCategory.categoryDescription"
+           placeholder="Description"
+           class="w-full p-2 mb-2 border border-gray-300 rounded-md">
+    <div class="flex space-x-2">
+      <button (click)="updateCategory(selectedCategory)"
+              class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Update</button>
+      <button (click)="deleteCategory(selectedCategory.categoryId)"
+              class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Delete</button>
+      <button (click)="clearSelection()"
+              class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Clear</button>
     </div>
-    <div class="w-[100%]">
-        <h1 class="mb-5 mt-10 flex justify-between items-center  text-4xl font-bold">All Categories</h1>
-        <div class="grid-container mt-8">
-            <div class="bg-white shadow-lg rounded-lg p-2">
-                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-                    <div class="form-group mb-3">
-                        <input type="text" id="Title" formControlName="header" class="bg-gray-50 border-2 border-gray-300 text-gray-900
-                        text-sm rounded-lg focus:ring-[#321fdb] focus:border-[#321fdb] outline-none block w-full p-2 " placeholder="Enter a Title" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <textarea id="description" formControlName="description" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm h-[50px] rounded-lg
-                        focus:ring-[#321fdb] focus:border-[#321fdb] outline-none block w-full p-3" placeholder="Enter a Description"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-group">
+  </div>
 
-                            <input type="file" id="image" formControlName="image" (change)="onImageChange($event)" accept="image/*" class="bg-gray-50 hidden border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#321fdb] focus:border-[#321fdb] outline-none w-full p-2"
-                            />
-                        </div>
+<!--  <div class="mb-4 p-4 border rounded-md bg-gray-50">-->
+<!--    <h3 class="text-xl font-semibold mb-2">Add New Category</h3>-->
+<!--    <input [(ngModel)]="newCategory.categoryName"-->
+<!--           placeholder="Name"-->
+<!--           class="w-full p-2 mb-2 border border-gray-300 rounded-md">-->
+<!--    <input [(ngModel)]="newCategory.categoryDescription"-->
+<!--           placeholder="Description"-->
+<!--           class="w-full p-2 mb-2 border border-gray-300 rounded-md">-->
+<!--    <button (click)="addCategory()"-->
+<!--            class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Add</button>-->
+<!--  </div>-->
 
-                        <div (click)="openImage()" class="cursor-pointer relative bg-gray-50 border-2
-                       border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#321fdb]
-                       focus:border-[#321fdb] w-full overflow-hidden  h-[150px] flex justify-center items-center">
-                            <ng-container *ngIf="imageUrl; else noImage">
-                                <img [src]="imageUrl" [alt]="imageUrl" class="w-full h-full object-cover" />
-                            </ng-container>
-                            <ng-template #noImage>
-                                <img src="../../assets/download.png" alt="preview" class=" w-full h-full object-contain opacity-40" />
-                            </ng-template>
-                        </div>
+<!--  <button (click)="deleteAllCategories()"-->
+<!--          class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">Delete All Categories</button>-->
 
-                    </div>
-                    <button class="bg-black w-full rounded-lg text-white font-medium py-1" type="submit">{{editMode ? "Edit" :
-            (loading ? "adding.../" :"Add New" )}}</button>
-                </form>
-            </div>
-            <div class="bg-white flex flex-col shadow-lg rounded-lg p-2" *ngFor="let cat of categories">
-                <div class="cursor-pointer relative bg-gray-50 border-2
-              border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#321fdb]
-              focus:border-[#321fdb] w-full overflow-hidden  h-[150px] flex justify-center items-center">
-                    <img [src]="cat.image" [alt]="cat.name" class="w-full h-full object-cover" />
-                </div>
-                <div class="info flex-1 pb-2 border-b flex flex-col">
-                    <h1 class="text-xl font-medium">{{cat.name}}</h1>
-                    <p class="text-lg font-light text-slate-600">{{cat.description}}</p>
-                </div>
-                <div class="flex justify-between items-center pt-2">
-                    <span class="text-xs text-slate-500">{{formatReadableDate(cat.createdAt)}}</span>
-                    <div class="flex items-center gap-3">
-                        <button class="p-2 bg-green-500 rounded-md text-white font-bold" (click)="update(cat._id)"><i
-              class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="p-2 bg-red-500 rounded-md text-white font-bold" (click)="delete(cat._id)"><i
-              class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 </div>

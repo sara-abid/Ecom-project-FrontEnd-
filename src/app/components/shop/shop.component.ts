@@ -38,6 +38,7 @@ export class ShopComponent implements OnInit {
       {
         next:data => {
           this.products = data;
+          this.filteredProducts = [...this.products]
           console.log(data)
         }
       }
@@ -104,9 +105,12 @@ export class ShopComponent implements OnInit {
   }
 filterProducts(): void {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    console.log(this.minValue);
+    console.log(this.maxValue);
+    
     const endIndex = startIndex + this.itemsPerPage;
     const filtered = this.products.filter(product =>
-      product.price >= this.minValue && product.price <= this.maxValue
+      (product.price >= this.minValue && product.price <= this.maxValue)
     );
     this.filteredProducts = filtered.slice(startIndex, endIndex);
   }

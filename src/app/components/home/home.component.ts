@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductServiceApp } from 'src/app/service-App/product.service';
+import { CartService } from 'src/app/serviceApp/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { ProductServiceApp } from 'src/app/service-App/product.service';
 })
 export class HomeComponent {
   // achraf
-  constructor(private router:Router,private productService: ProductServiceApp) {}
+  constructor(private router:Router,private productService: ProductServiceApp, private cartService: CartService) {}
 Product = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6"]
 // achraf
 errorMessage: string = '';
@@ -23,12 +24,15 @@ products: any = [];
 
   ngOnInit() {
     this.createClonedProducts();
+    this.getAllProducts();
   }
 // achraf
   getAllProducts() {
     this.productService.getAllProducts().subscribe(
       data => {
         this.products = data;
+        console.log(data);
+        
       },
       error => {
         this.handleError(error);
@@ -40,6 +44,7 @@ products: any = [];
     console.error('An error occurred:', error);
     this.errorMessage = error;
   }
+
 
     
 
@@ -56,5 +61,10 @@ products: any = [];
 
   toBlogClick() {
     this.router.navigate (['/blog'])
+  }
+
+  addToCart(product: any): void {
+    this.cartService.addToCart(product);
+    // this.toastrService.success("Product added ")
   }
 }

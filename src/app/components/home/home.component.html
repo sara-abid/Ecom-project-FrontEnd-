@@ -32,13 +32,13 @@
 
         <div class="w-full flex ">
             <ul class="flex-shrink-0 flex justify-center space-x-12 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll " #productContainer>
-                <ng-container *ngFor="let prod of clonedProducts; let i = index">
+                <ng-container *ngFor="let prod of products; let i = index">
                     <li class="hover:scale-110">
-                        <img src="/assets/LOGO.png" alt="Product 1" class="w-56">
-                        <h5 class="text-[#1D6042] font-bold">{{prod}}</h5>
-                        <p class="text-[#9bbaa4]">Description</p>
-                        <p>Price</p>
-                        <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                        <img [src]="prod.imageUrl" alt="product-image" class="w-full h-40 object-cover rounded-lg" />
+                        <h5 class="text-[#1D6042] font-bold">{{prod.name}}</h5>
+                        <p class="text-[#9bbaa4]">{{ prod.description }}</p>
+                        <p>{{prod.price }} MAD</p>
+                        <button (click)="addToCart(prod)" class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-[#1D6042] rounded-lg hover:bg-gray-900 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                             Shop Now
                         </button>
                     </li>
@@ -74,7 +74,7 @@
 
                 <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
                     <!-- image - start -->
-                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
+                    <a routerLink="/shop" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
                         <img src="/assets/home.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -85,7 +85,7 @@
                     <!-- image - end -->
 
                     <!-- image - start -->
-                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
+                    <a routerLink="/shop" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
                         <img src="/assets/beauty.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -96,7 +96,7 @@
                     <!-- image - end -->
 
                     <!-- image - start -->
-                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
+                    <a routerLink="/shop" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-60">
                         <img src="/assets/garden.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
@@ -107,7 +107,7 @@
                     <!-- image - end -->
 
                     <!-- image - start -->
-                    <a href="#" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
+                    <a routerLink="/shop" class="group relative flex h-36 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-60">
                         <img src="/assets/gift.jpg" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">

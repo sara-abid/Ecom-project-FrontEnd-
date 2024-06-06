@@ -2,6 +2,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { Product, ProductService } from 'src/app/serviceApp/product.service';
 import { CartService } from 'src/app/serviceApp/cart.service';
+import {ProductServiceService} from "../../dashboard/services/product-service.service";
+import {data} from "autoprefixer";
 
 @Component({
   selector: 'app-shop',
@@ -26,15 +28,46 @@ export class ShopComponent implements OnInit {
 
 
   constructor(
-    private productService: ProductService,
+    //private productService: ProductService,
     private cartService: CartService,
+    private productService: ProductServiceService
   ) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(
+      {
+        next:data => {
+          this.products = data;
+          console.log(data)
+        }
+      }
+    );
     this.filteredProducts = [...this.products];
+    // this.getAllProducts();
   }
 
+  // --------------------------------------
+  // products: any = [];
+  // newProduct: { price: number; imageDto: null; description: string; productName: string } = { productName: '', description: '', price: 0, imageDto: null };
+  // subcategoryIds: number[] = [];  // Adjust according to your needs
+  // errorMessage: string = '';
+  //
+  // private handleError(error: any) {
+  //   console.error('An error occurred:', error);
+  //   this.errorMessage = error;
+  // }
+  //
+  // getAllProducts() {
+  //   this.productService.getAllProducts().subscribe(
+  //     data => {
+  //       this.products = data;
+  //     },
+  //     error => {
+  //       this.handleError(error);
+  //     }
+  //   );
+  // }
+  // ----------------------------------------------------------------------------------
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
     // this.toastrService.success("Product added ")
@@ -72,7 +105,7 @@ export class ShopComponent implements OnInit {
 filterProducts(): void {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    const filtered = this.products.filter(product => 
+    const filtered = this.products.filter(product =>
       product.price >= this.minValue && product.price <= this.maxValue
     );
     this.filteredProducts = filtered.slice(startIndex, endIndex);
@@ -85,7 +118,7 @@ filterProducts(): void {
   }
 
   get totalPages(): number {
-    return Math.ceil(this.products.filter(product => 
+    return Math.ceil(this.products.filter(product =>
       product.price >= this.minValue && product.price <= this.maxValue
     ).length / this.itemsPerPage);
   }

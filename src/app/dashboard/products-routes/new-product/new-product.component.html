@@ -83,8 +83,8 @@
     <li *ngFor="let product of products" class="p-4 bg-white rounded-lg shadow-md flex items-center justify-between">
       <div class="flex items-center space-x-4">
         <span class="text-lg font-medium">{{ product.productName }}</span>
-        <span class="text-gray-500">${{ product.price }}</span>
-        <img [src]="product.imageUrl" alt="{{ product.productName }}">
+        <span class="text-gray-500">{{ product.price }} MAD</span>
+        <img [src]="product.imageUrl " class="h-20 w-20" alt="{{ product.productName }}">
       </div>
       
       <div class="space-x-2">
